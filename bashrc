@@ -133,4 +133,4 @@ function ,tobranch() {
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-source $(pew shell_config)
+command -v pew && source $(pew shell_config)
