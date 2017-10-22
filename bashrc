@@ -37,7 +37,7 @@ alias ,pypath-no='unset PYTHONPATH'
 
 alias ,path-here='PATH=`pwd`:"$PATH"'
 
-# ARIC testing short cut:
+# testing short cut:
 alias ,curl='curl -H "Content-Type: application/json" -H "X-Auth-Token: ${TOKEN}"'
 
 # Cute and very helpful functions that I got from Dan Bloch a long time ago.
@@ -60,16 +60,6 @@ function L() {
     do
         cat ~/.scratch/.M$d | sed -e "s,^,$d	,"
     done
-}
-
-function tt () 
-{ 
-    sed -e 's/<FIELD>/'$1'/g' < DougCVM-template.json > DougCVM-event.json
-}
-
-function tt3 () 
-{ 
-    sed -e 's/<FIELD>/'$1'/g' < DougCVM-template3.json > DougCVM-event3.json
 }
 
 PS1='\n\D{%s %H:%M:%S}\n\! \w\n\$ '
