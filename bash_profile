@@ -1,22 +1,10 @@
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
 
-if [ -e /etc/bash.bashrc ] ; then
-  source /etc/bash.bashrc
-fi
-
-if [ -e "${HOME}/.bashrc" ] ; then
-  source "${HOME}/.bashrc"
-fi
-
-
-if [ -e "${HOME}/.bashrc_local" ] ; then
-  source "${HOME}/.bashrc_local"
-fi
-
-if [ -e "${HOME}/.profile" ] ; then
-  source "${HOME}/.profile"
-fi
+for d in /etc/bash.bashrc ~/.bashrc ~/.bashrc_local ~/.profile ~/.rvm/scripts/rvm
+do
+   test -s "$d" && source "$d"
+done
 
 export TMPDIR=/tmp
 export EDITOR=vim
@@ -27,26 +15,20 @@ export CVS_RSH=ssh
 
 export HISTTIMEFORMAT="%H:%M:%S "
 
+export PYTHONDONTWRITEBYTECODE=1
+
 export WORKON_HOME="${HOME}/.virtual_envs"
 if [ ! -d "${WORKON_HOME}" ]; then
     echo mkdir "${WORKON_HOME}"
     mkdir "${WORKON_HOME}"
 fi
 
-export PYTHONDONTWRITEBYTECODE=1
-
 for d in \
          "/c/Program Files/GnuWin32/bin" \
          /Library/Frameworks/Python.framework/Versions/Current/bin \
          /usr/texbin \
          /c/Python24/Scripts \
-        "${HOME}/bin" \
-        "${CFM_HOME}/bin"
+        "${HOME}/bin"
 do
-    if [ -d "$d" ];
-    then
-        export PATH="$d":"$PATH"
-    fi
+    test -d "$d" && export PATH="$d":"$PATH"
 done
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
