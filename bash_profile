@@ -28,7 +28,8 @@ for d in \
          /Library/Frameworks/Python.framework/Versions/Current/bin \
          /usr/texbin \
          /c/Python24/Scripts \
-        "${HOME}/bin"
+        "${HOME}/bin" \
+        /opt/local/bin
 do
     test -d "$d" && export PATH="$d":"$PATH"
 done
