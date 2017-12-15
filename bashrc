@@ -74,6 +74,11 @@ alias e=emacs
 #alias root='hg root'
 #alias cdr='cd `root`'
 
+# misc helpers
+
+# convert epoch seconds to UTC
+alias ,es2UTC='date -ujr'
+
 # pew helpers
 alias ,tmpvenv="pew mktmpenv -p python3"
 
@@ -83,6 +88,7 @@ alias ,progress="sed -E -e 's/^(default_format=).*/\1progress/' -i '' .behaverc"
 alias ,stop="sed -E -e 's/^(stop=).*/\1true/' -i '' .behaverc"
 alias ,go="sed -E -e 's/^(stop=).*/\1false/' -i '' .behaverc"
 
+# git helpers
 alias ,add='git add'
 alias ,b=',branch'
 alias ,bplain=",b --list -q | sed -e 's/^[* ]*//'"
@@ -97,7 +103,10 @@ alias ,dc0=',dc -U0'
 alias ,dev=',tobranch develop'
 alias ,diff='git diff'
 alias ,fetch-all='git fetch --all'
+alias ,fog=',mirror --dry-run'
 alias ,glass=',mirror;,mirror;,mirror'
+# And because I mistype this so much:
+alias ,gof=,fog
 alias ,l=',log'
 alias ,log-all=',log --all'
 alias ,log='git log --oneline --decorate --graph'
