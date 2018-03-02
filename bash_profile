@@ -17,6 +17,8 @@ export HISTTIMEFORMAT="%H:%M:%S "
 
 export PYTHONDONTWRITEBYTECODE=1
 
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 export WORKON_HOME="${HOME}/.virtual_envs"
 if [ ! -d "${WORKON_HOME}" ]; then
     echo mkdir "${WORKON_HOME}"
@@ -29,7 +31,8 @@ for d in \
          /usr/texbin \
          /c/Python24/Scripts \
         "${HOME}/bin" \
-        /opt/local/bin
+        /opt/local/bin \
+        /usr/local/opt/python@2/bin
 do
     test -d "$d" && export PATH="$d":"$PATH"
 done

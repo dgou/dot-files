@@ -133,3 +133,13 @@ function ,tobranch() {
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 command -v pew >& /dev/null && source $(pew shell_config)
+
+
+# NOTES: pushing --mirror in git is easy.
+#        Pulling, not so much.
+# From:
+#    https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git
+#        git clone --mirror path/to/original path/to/dest/.git
+#        cd path/to/dest
+#        git config --bool core.bare false
+#        git checkout anybranch
