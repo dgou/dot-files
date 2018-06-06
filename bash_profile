@@ -36,3 +36,6 @@ for d in \
 do
     test -d "$d" && export PATH="$d":"$PATH"
 done
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
