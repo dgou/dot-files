@@ -1,7 +1,7 @@
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
 
-for d in /etc/bash.bashrc ~/.bashrc ~/.bashrc_local ~/.profile ~/.rvm/scripts/rvm
+for d in /etc/bash.bashrc ~/.bashrc ~/.profile ~/.rvm/scripts/rvm
 do
    test -s "$d" && source "$d"
 done

@@ -145,3 +145,5 @@ command -v pew >& /dev/null && source $(pew shell_config)
 #        cd path/to/dest
 #        git config --bool core.bare false
 #        git checkout anybranch
+
+test -s ~/.bashrc_local && source ~/.bashrc_local
