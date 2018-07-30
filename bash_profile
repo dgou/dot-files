@@ -31,7 +31,8 @@ for d in \
          /usr/texbin \
          /c/Python24/Scripts \
         "${HOME}/bin" \
-        /opt/local/bin
+        /opt/local/bin \
+        /usr/local/opt/curl/bin
 do
     test -d "$d" && export PATH="$d":"$PATH"
 done

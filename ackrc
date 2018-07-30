@@ -3,3 +3,6 @@ feature:ext:feature
 
 --type-set
 config:ext:config
+
+--type-set
+rst:ext:rst
