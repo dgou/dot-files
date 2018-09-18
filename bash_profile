@@ -32,7 +32,8 @@ for d in \
          /c/Python24/Scripts \
         "${HOME}/bin" \
         /opt/local/bin \
-        /usr/local/opt/curl/bin
+        /usr/local/opt/curl/bin \
+        /usr/local/opt/python/libexec/bin
 do
     test -d "$d" && export PATH="$d":"$PATH"
 done

@@ -6,3 +6,6 @@ config:ext:config
 
 --type-set
 rst:ext:rst
+
+--type-set
+md:ext:md

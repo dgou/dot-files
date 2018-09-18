@@ -4,3 +4,4 @@ log.*
 stats.*
 *.swp
 .last_commit_message.log
+*.pie
