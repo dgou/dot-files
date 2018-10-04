@@ -89,6 +89,9 @@ alias ,progress="sed -E -e 's/^(default_format=).*/\1progress/' -i '' .behaverc"
 alias ,stop="sed -E -e 's/^(stop=).*/\1true/' -i '' .behaverc"
 alias ,go="sed -E -e 's/^(stop=).*/\1false/' -i '' .behaverc"
 
+# flake8 helpers
+alias ,f8='flake8 > /tmp/f8 ; vim /tmp/f8'
+
 # git helpers
 alias ,add='git add'
 alias ,b=',branch'
