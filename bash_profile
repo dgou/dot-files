@@ -19,6 +19,8 @@ export PYTHONDONTWRITEBYTECODE=1
 
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
+export PYENV_SHELL=bash
+
 export WORKON_HOME="${HOME}/.virtual_envs"
 if [ ! -d "${WORKON_HOME}" ]; then
     echo mkdir "${WORKON_HOME}"
@@ -33,10 +35,12 @@ for d in \
         "${HOME}/bin" \
         /opt/local/bin \
         /usr/local/opt/curl/bin \
-        /usr/local/opt/python/libexec/bin
+        /usr/local/opt/python/libexec/bin \
+        "${HOME}/.pyenv/shims" \
+        "${HOME}/.poetry/bin"
+
 do
     test -d "$d" && export PATH="$d":"$PATH"
 done
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
