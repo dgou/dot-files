@@ -131,11 +131,13 @@ alias ,whacklogs='git clean -fXd logs'
 alias :e='vim'
 alias :q='exit'
 
+function ,context() {
+    ack --output '       $&' 'context\.\w+' | sort -t: -k 3 
+}
+
 function ,tobranch() {
     git branch | sed -n -e 's/^.* //' -e /"$1"/p  | xargs -n 1 git checkout
 }
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 command -v pew >& /dev/null && source $(pew shell_config)
 

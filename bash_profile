@@ -28,6 +28,7 @@ if [ ! -d "${WORKON_HOME}" ]; then
 fi
 
 for d in \
+         "${HOME}/.rvm/bin" \
          "/c/Program Files/GnuWin32/bin" \
          /Library/Frameworks/Python.framework/Versions/Current/bin \
          /usr/texbin \
@@ -37,7 +38,8 @@ for d in \
         /usr/local/opt/curl/bin \
         /usr/local/opt/python/libexec/bin \
         "${HOME}/.pyenv/shims" \
-        "${HOME}/.poetry/bin"
+        "${HOME}/.poetry/bin" \
+        "${HOME}/.local/bin"
 
 do
     test -d "$d" && export PATH="$d":"$PATH"
