@@ -39,7 +39,8 @@ for d in \
         /usr/local/opt/python/libexec/bin \
         "${HOME}/.pyenv/shims" \
         "${HOME}/.poetry/bin" \
-        "${HOME}/.local/bin"
+        "${HOME}/.local/bin" \
+        "${HOME}/Library/Python/3.7/bin"
 
 do
     test -d "$d" && export PATH="$d":"$PATH"
