@@ -10,7 +10,7 @@ let mapleader=','
 set backspace=indent,eol,start
 
 " set colorcolumn=50,80,100
-set colorcolumn=80,100
+set colorcolumn=50,72,80,100
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set scrolloff=3 " overlap on page scrolling.
