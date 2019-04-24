@@ -1,3 +1,5 @@
+--ignore-directory=dcxqe-venv
+
 --type-set
 feature:ext:feature
 
