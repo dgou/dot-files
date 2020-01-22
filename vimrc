@@ -83,3 +83,11 @@ map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 let g:clj_highlight_builtins=1 " Clojurebuiltins
+
+abbrev cl client
+abbrev ct context
+abbrev hl helper
+abbrev ri response_info
+abbrev RI ResponseInfo
+abbrev rs responses
+abbrev RL ResponseList
