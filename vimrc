@@ -42,7 +42,8 @@ if has("autocmd")
     \ endif
 
   " set colorcolumn=50,80,100
-  autocmd BufRead,BufNewFile *.py setlocal colorcolumn=50,72,80,100
+  autocmd BufRead,BufNewFile *.py setlocal colorcolumn=80,100
+  autocmd BufRead,BufNewFile COMMIT_EDITMSG setlocal colorcolumn=50,72
   augroup END
 
 endif " has("autocmd")
