@@ -92,3 +92,4 @@ abbrev ri response_info
 abbrev RI ResponseInfo
 abbrev rs responses
 abbrev RL ResponseList
+abbrev yd yield
