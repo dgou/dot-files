@@ -143,6 +143,16 @@ function ,tobranch() {
     git branch | sed -n -e 's/^.* //' -e /"$1"/p  | xargs -n 1 git checkout
 }
 
+function ,rall() {
+
+    for x in $(git for-each-ref --format '%(refname:short)' refs/heads/)
+    do
+      git checkout "$x"
+      git rebase master || return
+      echo
+    done
+}
+
 command -v pew >& /dev/null && source $(pew shell_config)
 
 
