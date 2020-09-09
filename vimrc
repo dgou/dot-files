@@ -71,11 +71,13 @@ set foldmethod=indent
 " turned off foldenable
 " turning it on seemed like a good idea, but it was just getting in the way
 set nofoldenable
-map <leader>, :w:n
+map <leader>, :w
+:n
 "tired of invoking fmt by accident because of shift key delay
 map ; :
 " map ; !}fmt -l 0 -70
-" map ; :!rm %,n
+" map ; :!rm %
+,n
 
 " From vimcasts.org/episodes/the-edit-command/
 map <leader>ew :e <C-R>=expand("%:p:h") . "/"  <CR>
@@ -93,3 +95,9 @@ abbrev RI ResponseInfo
 abbrev rs responses
 abbrev RL ResponseList
 abbrev yd yield
+
+:command Wq wq
+:command Q q
+:command W w
+:command WQ wq
+
