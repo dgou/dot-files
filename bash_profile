@@ -40,7 +40,6 @@ for d in \
         "${HOME}/.pyenv/shims" \
         "${HOME}/.poetry/bin" \
         "${HOME}/.local/bin" \
-        "${HOME}/Library/Python/3.7/bin" \
         /home/linuxbrew/.linuxbrew/bin
 
 
