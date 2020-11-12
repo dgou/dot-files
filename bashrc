@@ -143,6 +143,7 @@ function ,tobranch() {
     git branch | sed -n -e 's/^.* //' -e /"$1"/p  | xargs -n 1 git checkout
 }
 
+# Rebase all the branches to master
 function ,rall() {
 
     for x in $(git for-each-ref --format '%(refname:short)' refs/heads/)
@@ -150,6 +151,21 @@ function ,rall() {
       git checkout "$x"
       git rebase master || return
       echo
+    done
+}
+
+# Rebase all the branches but those matching the parameter as a pattern
+function ,rbut() {
+
+    for x in $(git for-each-ref --format '%(refname:short)' refs/heads/)
+    do
+      echo
+      if [[ "$x" =~ "$1" ]] ; then
+         echo "Skipping $x"
+         continue
+      fi
+      git checkout "$x"
+      git rebase master || return
     done
 }
 
