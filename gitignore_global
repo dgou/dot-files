@@ -5,3 +5,4 @@ stats.*
 *.swp
 .last_commit_message.log
 *.pie
+jenkins_logs
