@@ -90,6 +90,7 @@ abbrev ct context
 abbrev hl helper
 abbrev ri response_info
 abbrev RI ResponseInfo
+abbrev re response
 abbrev rs responses
 abbrev RL ResponseList
 abbrev yd yield
