@@ -152,5 +152,3 @@ function ,rbut() {
 #        cd path/to/dest
 #        git config --bool core.bare false
 #        git checkout anybranch
-
-test -s ~/.zshrc_local && source ~/.zshrc_local
