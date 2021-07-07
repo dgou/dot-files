@@ -13,3 +13,7 @@ PROMPT='
 source ~/.aliases
 
 test -s ~/.zshrc_local && source ~/.zshrc_local
+
+# No matter what our editor/visual setting,
+# I am used to emacs at the command line.
+bindkey -e
