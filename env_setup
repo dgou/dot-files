@@ -41,3 +41,8 @@ for d in \
 do
     test -d "$d" && export PATH="$d":"$PATH"
 done
+
+
+BREW_CMD=/home/linuxbrew/.linuxbrew/bin/brew
+
+[ -f $BREW_CMD ] && eval $($BREW_CMD shellenv)
