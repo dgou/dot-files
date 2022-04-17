@@ -2,7 +2,7 @@
 .DS_Store
 log.*
 stats.*
-*.swp
+.*.swp
 .last_commit_message.log
 *.pie
 jenkins_logs
