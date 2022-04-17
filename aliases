@@ -88,6 +88,7 @@ alias ,gof=,fog
 alias ,l=',log'
 alias ,log-all=',log --all'
 alias ,log='git log --oneline --decorate --graph'
+alias ,log='git log --graph --pretty=format:"%C(yellow)%h%Creset %cs %<(10,trunc)%an %Cgreen%d%Creset - %s"'
 alias ,master=',tobranch master'
 alias ,mirror=',push origin --mirror'
 alias ,new-branch='git checkout -b'
