@@ -23,6 +23,7 @@ if [ ! -d "${WORKON_HOME}" ]; then
 fi
 
 for d in \
+         "${HOME}/aws-sam/bin" \
          "${HOME}/.tfenv/bin" \
          "${HOME}/.rvm/bin" \
          "/c/Program Files/GnuWin32/bin" \
