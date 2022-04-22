@@ -17,3 +17,6 @@ md:ext:md
 
 --type-set
 yaml:ext:yaml,yml
+
+--type-set
+toml:ext:toml
