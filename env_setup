@@ -4,7 +4,7 @@ export ARCHFLAGS="-arch x86_64"
 export TMPDIR=/tmp
 export EDITOR=vim
 export MANPATH=/opt/local/share/man:$MANPATH
-export DISPLAY=:0.0
+export DISPLAY="${DISPLAY:-:0.0}"
 
 export CVS_RSH=ssh
 
