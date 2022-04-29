@@ -12,8 +12,9 @@ set -o ignoreeof
 # Don't put duplicate lines in the history.
 export HISTCONTROL=ignoredups:ignorespace
 
-PS1='\n\D{%s %H:%M:%S}\n\! \w\n\$ '
+PS1='\n${VIRTUAL_ENV:+[[}${VIRTUAL_ENV}${VIRTUAL_ENV:+]]\n}\D{%s %H:%M:%S}\n\! \w\n\$ '
 
+#PS1='\n\D{%s %H:%M:%S}\n\! \w\n\$ '
 #PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
 #PS1='\[\e]0;\w\a\]\n\u@\h \w\n\$ '
 #PS1='\u@\h \w\n\$ '
