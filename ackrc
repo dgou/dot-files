@@ -20,3 +20,6 @@ yaml:ext:yaml,yml
 
 --type-set
 toml:ext:toml
+
+--type-set
+txt:ext:txt
