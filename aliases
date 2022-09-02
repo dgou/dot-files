@@ -22,6 +22,15 @@ alias ,pypath-no='unset PYTHONPATH'
 
 alias ,path-here='PATH=`pwd`:"$PATH"'
 
+
+# Print a nice border around a message
+# to make it easier to find when scrolling through shell history
+function ,msg() {
+    echo
+    echo "$*" | boxes -d shell
+    echo
+}
+
 # testing short cut:
 alias ,curl='curl -H "Content-Type: application/json" -H "X-Auth-Token: ${TOKEN}"'
 
@@ -89,10 +98,11 @@ alias ,l=',log'
 alias ,log-all=',log --all'
 alias ,log='git log --oneline --decorate --graph'
 alias ,log='git log --graph --pretty=format:"%C(yellow)%h%Creset %cs %<(10,trunc)%an %Cgreen%d%Creset - %s"'
-alias ,master=',tobranch master'
+alias ,master='git checkout master'
 alias ,mirror=',push origin --mirror'
 alias ,new-branch='git checkout -b'
 alias ,pom=',push origin master'
+alias ,prd='git checkout prd'
 alias ,push='git push'
 alias ,s=',status'
 alias ,sall=',status -uall'
