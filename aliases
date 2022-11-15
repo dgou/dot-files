@@ -61,6 +61,15 @@ alias vi=vim
 
 alias ,es2UTC='date -ujr'
 
+# Update gnome terminal title
+# - copied from https://askubuntu.com/questions/22413/how-to-change-gnome-terminal-title
+function termtitle() {
+    TITLE=$1
+    shift
+    # update title
+    PROMPT_COMMAND='echo -ne "\033]0; $TITLE \007"'
+}
+
 # pew helpers
 alias ,tmpvenv="pew mktmpenv -p python3"
 
