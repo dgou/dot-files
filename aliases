@@ -31,6 +31,8 @@ function ,msg() {
     echo
 }
 
+alias ,pause="read -p 'Hit <return> to continue...'"
+
 # testing short cut:
 alias ,curl='curl -H "Content-Type: application/json" -H "X-Auth-Token: ${TOKEN}"'
 
