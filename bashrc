@@ -10,7 +10,7 @@ set -o notify
 set -o ignoreeof
 
 # Don't put duplicate lines in the history.
-export HISTCONTROL=ignoredups:ignorespace
+export HISTCONTROL=ignoredups
 
 PS1='\n${VIRTUAL_ENV:+[[}${VIRTUAL_ENV}${VIRTUAL_ENV:+]]\n}\D{%s %H:%M:%S}\n\! \w\n\$ '
 
