@@ -23,3 +23,7 @@ PS1='\n${VIRTUAL_ENV:+[[}${VIRTUAL_ENV}${VIRTUAL_ENV:+]]\n}\D{%s %H:%M:%S}\n\! \
 source ~/.aliases
 
 test -s ~/.bashrc_local && source ~/.bashrc_local
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
