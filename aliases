@@ -1,16 +1,29 @@
 # base-files version 3.2-1
 
+# Why do so many aliases and functions start with a comma?
+# Glad you asked!
+# Answer is here: https://rhodesmill.org/brandon/2009/commands-with-comma/
+
+
 alias ..='cd ..' # Go up one directory
 alias ...='cd ../..' # Go up two directories
 alias ....='cd ../../..' # And for good measure
+
+
 
 alias rm='rm -i'
 alias ls='ls -F'
 alias ll='ls -l'
 alias la='ls -A'
 
+
 alias ,nocr='tr -d \\015'
+
+# Useful on systems where a simple 'man foo > /tmp/foo.man' captures terminal control characters
+# I can instead use `man foo | ,nobs > /tmp/foo.man'
 alias ,nobs='sed -e "s,.,,g"'
+
+
 
 #from Nathan:
 alias ,proxy="export http_proxy=localhost:8080;export https_proxy=localhost:8080"
@@ -23,6 +36,7 @@ alias ,pypath-no='unset PYTHONPATH'
 alias ,path-here='PATH=`pwd`:"$PATH"'
 
 
+
 # Print a nice border around a message
 # to make it easier to find when scrolling through shell history
 function ,msg() {
@@ -33,11 +47,14 @@ function ,msg() {
 
 alias ,pause="read -p 'Hit <return> to continue...'"
 
+
 # testing short cut:
 alias ,curl='curl -H "Content-Type: application/json" -H "X-Auth-Token: ${TOKEN}"'
 
+
 # Cute and very helpful functions that I got from Dan Bloch a long time ago.
-# Very useful if your home directory is on a network file system, such as AFS.
+# Very useful if your home directory is on a network file system, such as AFS,
+# but also just very useful as short-cut anyways.
 function G() {
     cd "`cat ~/.scratch/.M"$1" `"
 }
@@ -58,10 +75,18 @@ function L() {
     done
 }
 
+
+
 alias e=emacs
+
+# Lazy and also I sometimes forget the 'm' on 'vim' :-)
 alias vi=vim
 
+
+# Epoch seconds to UTC conversion, but hasn't aged well.
 alias ,es2UTC='date -ujr'
+
+
 
 # Update gnome terminal title
 # - copied from https://askubuntu.com/questions/22413/how-to-change-gnome-terminal-title
@@ -72,8 +97,11 @@ function termtitle() {
     PROMPT_COMMAND='echo -ne "\033]0; $TITLE \007"'
 }
 
+
+
 # pew helpers
 alias ,tmpvenv="pew mktmpenv -p python3"
+
 
 # Behave helpers
 alias ,plain="sed -E -e 's/^(default_format=).*/\1plain/' -i '' .behaverc"
@@ -81,8 +109,10 @@ alias ,progress="sed -E -e 's/^(default_format=).*/\1progress/' -i '' .behaverc"
 alias ,stop="sed -E -e 's/^(stop=).*/\1true/' -i '' .behaverc"
 alias ,go="sed -E -e 's/^(stop=).*/\1false/' -i '' .behaverc"
 
+
 # flake8 helpers
 alias ,f8='flake8 > /tmp/f8 ; vim /tmp/f8'
+
 
 # git helpers
 alias ,add='git add'
@@ -133,6 +163,9 @@ function ,context() {
     ack --output '       $&' 'context\.\w+' | sort -t: -k 3 
 }
 
+# Easy way to check out a branch given a subsiring of the branch name.
+# If more than one matches, it'll cycle through them.
+# This won't hurt anything and isn't worth trying to enforce uniqueness on.
 function ,tobranch() {
     git branch | sed -n -e 's/^.* //' -e /"$1"/p  | xargs -n 1 git checkout
 }
@@ -148,7 +181,11 @@ function ,rall() {
     done
 }
 
-# Rebase all the branches but those matching the parameter as a pattern
+# Rebase all the branches except those matching the parameter as a pattern
+# This is handy when you have a number of branches to rebase and you want
+# to control the ordering. The last rebased branch is the easiest
+# to see and find, so a combo of `,rbut favorite-branch ; ,rall` will
+# make favorite-branch the last one to be rebased :-)
 function ,rbut() {
 
     for x in $(git for-each-ref --format '%(refname:short)' refs/heads/)
@@ -178,6 +215,7 @@ function ,ronly() {
     done
 }
 
+# Haven't used 'pew' as much since using docker containers more for things.
 # command -v pew >& /dev/null && source $(pew shell_config)
 
 
