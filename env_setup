@@ -40,7 +40,8 @@ for d in \
         "${HOME}/.local/bin" \
         /home/linuxbrew/.linuxbrew/bin \
         /usr/local/go/bin \
-        "${HOME}/go/bin"
+        "${HOME}/go/bin" \
+        /opt/homebrew/bin
 do
     test -d "$d" && export PATH="$d":"$PATH"
 done
